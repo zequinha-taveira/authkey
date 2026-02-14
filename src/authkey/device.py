@@ -1,3 +1,6 @@
+# Copyright (c) 2026 authkey
+# Licensed under the MIT License
+
 from typing import List
 from fido2.hid import CtapHidDevice
 from .exceptions import DeviceNotFoundError

@@ -1,3 +1,6 @@
+# Copyright (c) 2026 authkey
+# Licensed under the MIT License
+
 """
 authkey - A professional Python library for FIDO2 Security Keys.
 """

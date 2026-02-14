@@ -1,3 +1,6 @@
+# Copyright (c) 2026 authkey
+# Licensed under the MIT License
+
 from dataclasses import dataclass
 from typing import Optional
 

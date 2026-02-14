@@ -1,3 +1,6 @@
+# Copyright (c) 2026 authkey
+# Licensed under the MIT License
+
 class SecureKeyError(Exception):
     """Base exception for all authkey errors."""
     pass

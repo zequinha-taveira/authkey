@@ -1,3 +1,6 @@
+# Copyright (c) 2026 authkey
+# Licensed under the MIT License
+
 import secrets
 from typing import Optional
 from fido2.client import Fido2Client
