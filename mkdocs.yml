@@ -1,6 +1,7 @@
 site_name: authkey-sdk
 site_description: A professional Python library for FIDO2 Security Keys
-repo_url: https://github.com/authkey/authkey-sdk
+repo_url: https://github.com/zequinha-taveira/authkey
+site_url: https://zequinha-taveira.github.io/authkey/
 
 theme:
   name: material

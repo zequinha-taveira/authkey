@@ -36,8 +36,9 @@ dev = [
 
 
 [project.urls]
-"Homepage" = "https://github.com/authkey/authkey-sdk"
-"Bug Tracker" = "https://github.com/authkey/authkey-sdk/issues"
+"Homepage" = "https://zequinha-taveira.github.io/authkey/"
+"Repository" = "https://github.com/zequinha-taveira/authkey"
+"Bug Tracker" = "https://github.com/zequinha-taveira/authkey/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
