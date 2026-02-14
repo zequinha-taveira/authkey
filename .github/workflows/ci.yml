@@ -29,4 +29,5 @@ jobs:
       run: ruff check .
     
     - name: Test with pytest
-      run: pytest tests/ --cov=src/authkey --cov-report=xml
+      run: pytest
+
