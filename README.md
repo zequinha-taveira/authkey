@@ -17,10 +17,12 @@ A professional, vendor-neutral Python library for interacting with FIDO2 Securit
 
 ## Installation
 
-Install the stable version from PyPI:
+Install directly from the source for development or internal use:
 
 ```bash
-pip install authkey-sdk
+git clone https://github.com/zequinha-taveira/authkey.git
+cd authkey
+pip install .
 ```
 
 > [!NOTE]

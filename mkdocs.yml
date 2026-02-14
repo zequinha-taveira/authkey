@@ -25,7 +25,6 @@ nav:
   - Usage: usage.md
   - API Reference: api.md
   - Contributing: contributing_link.md
-  - Release Guide: release_guide.md
 
 markdown_extensions:
   - admonition
