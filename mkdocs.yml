@@ -21,6 +21,8 @@ plugins:
 
 nav:
   - Home: index.md
+  - Installation: installation.md
+  - Usage: usage.md
   - API Reference: api.md
   - Contributing: contributing_link.md
   - Release Guide: release_guide.md

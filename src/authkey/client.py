@@ -14,6 +14,14 @@ from .models import Assertion, Credential
 class SecurityKeyClient:
     """
     Main client for interacting with a FIDO2 Security Key.
+
+    This client provides a high-level API for discovering FIDO2 devices,
+    registering new credentials, and performing authentication.
+
+    Attributes:
+        rp_id (str): Relying Party ID (usually the domain name).
+        rp_name (str): Display name for the Relying Party.
+        origin (str): Origin URL derived from the rp_id.
     """
 
     def __init__(self, rp_id: str, rp_name: Optional[str] = None):
@@ -42,19 +50,26 @@ class SecurityKeyClient:
     def list_devices():
         """
         List all connected FIDO2 HID devices.
+
+        Returns:
+            list[CtapHidDevice]: A list of discovered CTAP HID devices.
         """
         return list_devices()
 
     def register(self, user_id: str, user_name: Optional[str] = None) -> Credential:
         """
-        Register a new credential on the security key.
-        
+        Register a new credential on the security key (FIDO2 makeCredential).
+
         Args:
-            user_id: Unique identifier for the user.
-            user_name: Display name for the user.
-            
+            user_id: Unique identifier for the user (e.g., a database UUID).
+            user_name: Friendly name for the user (e.g., "alice@example.com").
+
         Returns:
-            A Credential object containing the ID and Public Key.
+            Credential: A container for the newly created credential ID and public key.
+
+        Raises:
+            DeviceNotFoundError: If no security key is connected.
+            RegistrationError: If the hardware registration process fails.
         """
         user_name = user_name or user_id
         challenge = secrets.token_bytes(32)
@@ -86,13 +101,17 @@ class SecurityKeyClient:
 
     def authenticate(self, credential_id: bytes) -> Assertion:
         """
-        Authenticate using an existing credential.
-        
+        Authenticate using an existing credential (FIDO2 getAssertion).
+
         Args:
-            credential_id: The ID of the credential to use.
-            
+            credential_id: The raw bytes of the credential ID to use for signing.
+
         Returns:
-            An Assertion object containing the signature and authenticator data.
+            Assertion: The signed assertion including signature and authenticator data.
+
+        Raises:
+            DeviceNotFoundError: If no security key is connected.
+            AuthenticationError: If the hardware signing process fails.
         """
         challenge = secrets.token_bytes(32)
         client = self._get_client()
