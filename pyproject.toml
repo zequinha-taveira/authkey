@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "authkey-sdk"
+version = "0.1.0"
+authors = [
+  { name = "PicoTrust Team", email = "contact@picotrust.io" },
+]
+description = "A professional Python library for FIDO2 Security Keys"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Security :: Cryptography",
+]
+dependencies = [
+    "fido2>=1.1.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/picotrust/authkey-sdk"
+"Bug Tracker" = "https://github.com/picotrust/authkey-sdk/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
