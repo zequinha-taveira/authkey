@@ -6,7 +6,7 @@ from typing import Optional
 
 from fido2.client import Fido2Client
 
-from .device import get_first_device
+from .device import get_first_device, list_devices
 from .exceptions import AuthenticationError, RegistrationError
 from .models import Assertion, Credential
 
@@ -37,6 +37,13 @@ class SecurityKeyClient:
             self._device = get_first_device()
             self._client = Fido2Client(self._device, self.origin)
         return self._client
+
+    @staticmethod
+    def list_devices():
+        """
+        List all connected FIDO2 HID devices.
+        """
+        return list_devices()
 
     def register(self, user_id: str, user_name: Optional[str] = None) -> Credential:
         """
