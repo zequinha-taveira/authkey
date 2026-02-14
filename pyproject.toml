@@ -29,7 +29,12 @@ test = [
 dev = [
     "ruff>=0.1.0",
     "mypy>=1.0.0",
+    "build>=1.0.0",
+    "twine>=4.0.0",
+    "mkdocs-material>=9.0.0",
+    "mkdocstrings[python]>=0.20.0",
 ]
+
 
 
 [project.urls]
