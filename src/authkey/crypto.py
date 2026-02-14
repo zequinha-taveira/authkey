@@ -4,6 +4,7 @@
 import hmac
 import secrets
 
+
 def constant_time_compare(val1: bytes, val2: bytes) -> bool:
     """
     Compare two byte strings in constant time to prevent timing attacks.

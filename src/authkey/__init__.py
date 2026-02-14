@@ -6,8 +6,8 @@ authkey - A professional Python library for FIDO2 Security Keys.
 """
 
 from .client import SecurityKeyClient
-from .models import Credential, Assertion
-from .exceptions import SecureKeyError, DeviceNotFoundError, AuthenticationError
+from .exceptions import AuthenticationError, DeviceNotFoundError, SecureKeyError
+from .models import Assertion, Credential
 
 __all__ = [
     "SecurityKeyClient",

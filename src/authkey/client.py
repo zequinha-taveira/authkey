@@ -3,13 +3,13 @@
 
 import secrets
 from typing import Optional
+
 from fido2.client import Fido2Client
-from fido2.server import Fido2Server
-from fido2.webauthn import PublicKeyCredentialRpEntity
 
 from .device import get_first_device
-from .models import Credential, Assertion
-from .exceptions import RegistrationError, AuthenticationError
+from .exceptions import AuthenticationError, RegistrationError
+from .models import Assertion, Credential
+
 
 class SecurityKeyClient:
     """
